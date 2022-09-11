@@ -1,4 +1,4 @@
-# vn.py框架的OKEX底层接口
+# vn.py框架的OKX底层接口
 
 <p align="center">
   <img src ="https://vnpy.oss-cn-shanghai.aliyuncs.com/vnpy-logo.png"/>
@@ -11,17 +11,19 @@
     <img src ="https://img.shields.io/github/license/vnpy/vnpy.svg?color=orange"/>
 </p>
 
-关于使用VeighNa框架进行Crypto交易的话题，新开了一个[Github Discussions论坛](https://github.com/vn-crypto/vnpy_crypto/discussions)，欢迎通过这里来进行讨论交流。
+[Github Discussions论坛](https://github.com/vn-crypto/vnpy_crypto/discussions)
 
 ## 说明
 
-基于OKEX交易所的V5接口开发，支持统一账户下的现货、期货、永续、期权交易。
+2022.09.11,旧版本已不再适配OKX(原OKEX) api交易，决定抽时间进行改进。
+
+基于OKX交易所的V5接口开发，支持统一账户下的现货、期货、永续、期权交易。
 
 使用时需要注意本接口：
 
 1. 只支持单币种保证金模式
 2. 只支持全仓保证金模式
-3. 只支持单向持仓模式
+
 
 请在OKEX网站完成账户的相应设置后再使用。
 
@@ -50,7 +52,7 @@ from vnpy.event import EventEngine
 from vnpy.trader.engine import MainEngine
 from vnpy.trader.ui import MainWindow, create_qapp
 
-from vnpy_okex import OkexGateway
+from vnpy_okex import OkxGateway
 
 
 def main():
@@ -59,7 +61,7 @@ def main():
 
     event_engine = EventEngine()
     main_engine = MainEngine(event_engine)
-    main_engine.add_gateway(OkexGateway)
+    main_engine.add_gateway(OkxGateway)
     
     main_window = MainWindow(main_engine, event_engine)
     main_window.showMaximized()

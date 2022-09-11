@@ -31,17 +31,14 @@
 
 安装需要基于2.2.0版本以上的[VN Studio](https://www.vnpy.com)。
 
-直接使用pip命令：
-
-```
-pip install vnpy_okex
-```
 
 下载解压后在cmd中运行
 
 ```
 python setup.py install
 ```
+
+安装原版vnpy_okex，下载解压后对应覆盖。
 
 ## 使用
 
